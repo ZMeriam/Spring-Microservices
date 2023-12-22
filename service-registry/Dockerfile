@@ -1,5 +1,5 @@
 FROM openjdk:17
-ARG JAR_FILE=target/*.jar
+ARG JAR_FILE=target/*.jar./
 COPY ${JAR_FILE} server-registry.jar
 ENTRYPOINT ["java","-jar","/server-registry.jar"]
 EXPOSE 8761
