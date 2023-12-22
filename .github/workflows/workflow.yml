@@ -41,6 +41,7 @@ jobs:
 
     - name: Building and pushing user-service
       run: mvn package dockerfile:push --file user-service/pom.xml
+           echo "Meriam"
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
