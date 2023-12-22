@@ -120,7 +120,6 @@
 				<configuration>
 					<repository>zmeriam/user-service</repository>
 					<tag>0.0.1-SNAPSHOT</tag>
-					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
 				<dependencies>
 					<!-- To make this work on JDK 9+ -->
@@ -131,25 +130,6 @@
 					</dependency>
 				</dependencies>
 			</plugin>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
