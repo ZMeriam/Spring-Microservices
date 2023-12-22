@@ -55,13 +55,8 @@ jobs:
 
 
     - name: Building and pushing config-server
-    - run: |
-        echo "A initial message"
-        pip install -r requirements.txt
-        echo "Another message or command"
-        python myscript.py
-        bash some-shell-script-file.sh -xe
-    - run: echo "One last message"
+      run: mvn package dockerfile:push --file user-service/pom.xml
+
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
