@@ -40,7 +40,9 @@ jobs:
 
 
     - name: Building and pushing user-service
-      run: mvn -B package --file service-registry/pom.xml
+      run: |
+        docker login -u zmeriam -p Meriam1995
+        mvn package dockerfile:push --file service-registry/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
