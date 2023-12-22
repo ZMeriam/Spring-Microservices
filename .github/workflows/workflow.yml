@@ -27,9 +27,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3 #an action that allows you to check out a repository to allow your workflow to access it.
+    - uses: actions/checkout@v2 #an action that allows you to check out a repository to allow your workflow to access it.
     - name: Set up JDK 17
-      uses: actions/setup-java@v3 #Downloading and setting up a requested version of Java
+      uses: actions/setup-java@v2 #Downloading and setting up a requested version of Java
       with:
         java-version: 17
         distribution: 'adopt'
