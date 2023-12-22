@@ -52,7 +52,7 @@ jobs:
     - name: Building and pushing  department-service
       run: |
         docker login -u zmeriam -p Meriam1995
-        mvn package dockerfile:push --file user-service/pom.xml
+        mvn package dockerfile:push --file department-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
@@ -61,7 +61,7 @@ jobs:
     - name: Building and pushing config-server
       run: |
         mvn clean
-        mvn -B package --file user-service/pom.xml
+        mvn -B package --file config-server/pom.xml
 
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -80,7 +80,7 @@ jobs:
     - name: Building and pushing service-registry
       run: |
         mvn clean
-        mvn -B package --file user-service/pom.xml
+        mvn -B package --file service-registry/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
