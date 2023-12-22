@@ -40,8 +40,7 @@ jobs:
 
 
     - name: Building and pushing user-service
-
-    - run: mvn package dockerfile:push --file user-service/pom.xml
+      run: mvn package dockerfile:push --file user-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
