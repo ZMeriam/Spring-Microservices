@@ -32,9 +32,10 @@ jobs:
       uses: actions/setup-java@v3 #Downloading and setting up a requested version of Java
       with:
         java-version: 17
+        distribution: 'adopt'
         server-id: docker.io
         server-username: MAVEN_USERNAME
-        server password: MAVEN_PASSWORD
+        server-password: MAVEN_PASSWORD
 
 
 
