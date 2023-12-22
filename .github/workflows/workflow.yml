@@ -40,21 +40,27 @@ jobs:
 
 
     - name: Building and pushing user-service
-      run: mvn package dockerfile:push --file user-service/pom.xml
+      run: |
+        mvn clean
+        mvn -B package --file user-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
 
 
     - name: Building and pushing  department-service
-      run: mvn package dockerfile:push --file user-department/pom.xml
+      run: |
+        mvn clean
+        mvn -B package --file user-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
 
 
     - name: Building and pushing config-server
-      run: mvn package dockerfile:push --file user-service/pom.xml
+      run: |
+        mvn clean
+        mvn -B package --file user-service/pom.xml
 
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
@@ -62,14 +68,18 @@ jobs:
 
 
     - name: Building and pushing cloud-gateway
-      run: mvn package dockerfile:push --file cloud-gateway/pom.xml
+      run: |
+        mvn clean
+        mvn -B package --file user-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
 
 
     - name: Building and pushing service-registry
-      run: mvn package dockerfile:push --file service-registry/pom.xml
+      run: |
+        mvn clean
+        mvn -B package --file user-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
