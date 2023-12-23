@@ -34,7 +34,7 @@ jobs:
       with:
         java-version: 17
         distribution: 'adopt'
-        server-id: docker.io
+        server-id: registry.hub.docker.com
         server-username: MAVEN_USERNAME
         server-password: MAVEN_PASSWORD
 
