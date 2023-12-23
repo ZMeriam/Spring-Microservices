@@ -118,8 +118,8 @@
 					</execution>
 				</executions>
 				<configuration>
-					<repository>user-service</repository>
-					<tag>0.0.1-SNAPSHOT</tag>
+					<repository>zmeriam/user-service</repository>
+					<tag>0.0.2-SNAPSHOT</tag>
 					<useMavenSettingsForAuth>true</useMavenSettingsForAuth>
 				</configuration>
 				<dependencies>
