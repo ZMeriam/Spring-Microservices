@@ -36,18 +36,17 @@ jobs:
         distribution: 'adopt'
 
 
-
+    - name: Connecting to docker hub
+      run: Docker login -u MAVEN_USERNAME -p MAVEN_PASSWORD
     - name: Building and pushing user-service
-      run: mvn -X package dockerfile:push --file user-service/pom.xml -Ddockerhub.username=MAVEN_USERNAME -Ddockerhub.password=MAVEN_PASSWORD
+      run: mvn -X package dockerfile:push --file user-service/pom.xml 
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
 
 
     - name: Building and pushing  department-service
-      run: |
-        docker login -u zmeriam -p Meriam1995
-        mvn package dockerfile:push --file department-service/pom.xml
+      run: mvn package dockerfile:push --file department-service/pom.xml
       env:
            MAVEN_USERNAME: ${{secrets.DOCKER_USERNAME}}
            MAVEN_PASSWORD: ${{secrets.DOCKER.PASSWORD}}
